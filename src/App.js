@@ -13,11 +13,10 @@ function App() {
       <Header />
       {/* <Login />
       <Signup /> */}
-      {/* <HouseholdContainer /> */}
+      <HouseholdContainer />
       {/* <NewPetForm /> */}
       {/* <AppointmentScheduleContainer /> */}
-      <NewAppointmentForm />
-      
+      {/* <NewAppointmentForm /> */}
     </div>
   );
 }
