@@ -1,8 +1,15 @@
   
 import React from 'react';
-import PetImg from '../images/dog.png';
+import DogImg from '../images/dog.png';
+import CatImg from '../images/cat.png';
+import BunnyImg from '../images/bunny.png';
+
+import { useHistory } from "react-router";
+
 
 const Pet = (props) => {
+
+  const history = useHistory();
 
   const showPetDiv = () =>{
     if (props.pet){
@@ -31,10 +38,27 @@ const Pet = (props) => {
         })
   }
 
+
+  const goToAppointments =()=>{
+    history.push(`/${props.pet.id}/appointments`)
+  }
+
+
+  const petImg = ()=>{
+    if (props.pet.species === 'dog'){
+      return DogImg
+    } else if (props.pet.species === 'cat'){
+      return CatImg
+    } else{
+      return BunnyImg
+    }
+  }
+
   return(<div className="pet-container">
-    <img src={PetImg} alt="cartoon of pet" id="pet-img"></img>
+    <img src={petImg()} alt="cartoon of pet" id="pet-img"></img>
     {showPetDiv()}
     <button className="delete" onClick={handleClick}>X</button>
+    <button onClick={goToAppointments}>See Appointments</button>
   </div>)
 };
 

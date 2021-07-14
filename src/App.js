@@ -169,15 +169,42 @@ class App extends React.Component {
     if(this.state.token){
       return <AppointmentForm
         user = {this.state}
-
+        addAppointment = {this.addAppointment}
       />
     } else {
       return <Redirect to="/login" />
     }
   }
 
+  addAppointment = (appointment)=>{
+    this.setState({
+      appointments: [...this.state.appointments, appointment]
+    })
+  }
+
+  renderAppointments = (routerProps) =>{
+    if(this.state.token){
+      return <AppointmentScheduleContainer
+        user = {this.state}
+        deleteAppointment = {this.deleteAppointment}
+      />
+    } else {
+      return <Redirect to="/login" />
+    }
+  }
+
+  deleteAppointment = (appointmentToDelete) =>{
+    let appointmentCopy = [...this.state.appointments]
+    let newAppointmentsArr = appointmentCopy.filter(appointment => appointment.id !== appointmentToDelete.id)
+    this.setState({
+      appointments: newAppointmentsArr
+    })
+  }
+
+
+
   render(){
-    console.log("This is the state: ", this.state)
+    // console.log("This is the state: ", this.state)
     return (
       <div className="App">
         <Header/>
@@ -186,9 +213,10 @@ class App extends React.Component {
           {/* <Route path="/appointment" component={ <AppointmentForm />} /> */}
           <Route path="/household" render={this.renderHousehold } />
           <Route path="/login" render={ this.renderForms } />
-          <Route path="/newAppointment" render={this.renderNewAppointmentForm } />
+          <Route path="/:petId/newAppointment" children={this.renderNewAppointmentForm } />
+          <Route path="/:petId/appointments" children={this.renderAppointments} />
           <Route path="/newPet" render={this.renderNewPetForm } />
-          <Route path="/" exact component={this.renderForms} />
+          <Route path="/" exact component={this.renderHousehold} />
           <Route render={ () => <p>Page not Found</p> } />
         </Switch>
       </div>
