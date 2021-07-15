@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import { useHistory } from "react-router";
 import {useParams} from "react-router-dom";
+import Calendar from './Calendar'
 
 
 const AppointmentForm = (props) => {
@@ -49,8 +50,12 @@ const AppointmentForm = (props) => {
         .then(res => res.json())
         .then(newAppointment =>{
             console.log("This is the Appointment you just made: ", newAppointment)
-            props.addAppointment(newAppointment)
-            history.push(`/${petId}/appointments`)
+            if(newAppointment.errors){
+                alert(newAppointment.errors.join(" "))
+            }else{
+                props.addAppointment(newAppointment)
+                history.push(`/${petId}/appointments`)
+            }
 
         })
     }
@@ -98,6 +103,7 @@ const AppointmentForm = (props) => {
                 <input type="submit" value="book appointment" className="button" />
             </form>
         </section>
+        <Calendar user={props.user}/>
     </article>
 };
 

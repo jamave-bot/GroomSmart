@@ -42,9 +42,14 @@ const NewPetForm = (props) => {
         .then(res => res.json())
         .then(newPet =>{
             console.log("This is the Pet you just made: ", newPet)
-            props.addPet(newPet)
-            history.push("/household")
-
+            // props.addPet(newPet)
+            // history.push("/household")
+            if(newPet.errors){
+                alert(newPet.errors.join(", "))
+            }else{
+                props.addPet(newPet)
+                history.push(`/household`)
+            }
         })
     }
 
