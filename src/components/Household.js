@@ -3,7 +3,6 @@ import React from 'react';
 import Pet from '../components/Pet';
 import { useHistory } from "react-router";
 
-
 const Household = (props) => {
 
     const history = useHistory();
