@@ -66,7 +66,7 @@ const AppointmentForm = (props) => {
             <h2>schedule new appointment</h2>
             <form onSubmit={handleSubmit}>
                 <label for="service-type">service: </label>
-                <select id="service-type" onChange={handleService}>
+                <select id="service-type" required onChange={handleService}>
                     <option value="none" selected disabled hidden>
                         Select a Service
                     </option>

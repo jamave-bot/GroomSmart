@@ -15,7 +15,9 @@ const Pet = (props) => {
     if (props.pet){
       return <div id="pet-text-wrapper">
       <h3>{props.pet.name}</h3>
-      <span>{props.pet.age}, {props.pet.species}</span>
+      <span>{props.pet.age}, {props.pet.species}</span><br></br>
+    <button onClick={goToAppointments}>See Appointments</button>
+
     </div>
     }else{
       return <>
@@ -58,7 +60,7 @@ const Pet = (props) => {
     <img src={petImg()} alt="cartoon of pet" id="pet-img"></img>
     {showPetDiv()}
     <button className="delete" onClick={handleClick}>X</button>
-    <button onClick={goToAppointments}>See Appointments</button>
+    {/* <button onClick={goToAppointments}>See Appointments</button> */}
   </div>)
 };
 
