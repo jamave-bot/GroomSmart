@@ -12,7 +12,7 @@ export default function Calendar(props) {
 
 
     return (
-        <article className="wrapper">
+        <article className="wrapper" id="calendar">
             <FullCalendar
             plugins={[ dayGridPlugin ]}
             initialView="dayGridMonth"

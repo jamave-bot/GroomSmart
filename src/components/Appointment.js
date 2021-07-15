@@ -3,6 +3,7 @@
 import React from 'react';
 import SoapImg from '../images/soap.png';
 import ClippersImg from '../images/nail-clippers.png';
+import ScissorsImg from '../images/haircut.png';
 
 
 const Appointment = (props) => {
@@ -11,7 +12,7 @@ const Appointment = (props) => {
     if (props.appointment.service === "Shampoo & Condition"){
       return SoapImg
     } else if (props.appointment.service === 'Haircut'){
-      return ClippersImg
+      return ScissorsImg
     } else{
       return ClippersImg
     }

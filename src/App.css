@@ -14,10 +14,31 @@ body {
   background-position: center bottom;
 }
 
+h3 {
+  font-size: 13pt;
+}
+
+span, p {
+  font-size: 10pt;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10pt;
+  color: #37392E;
+}
+
 /* header styles */
 header {
   background-color: #28afb0;
-  height: 10vh;
+  height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,10 +49,11 @@ h1 {
   color: #ffffff;
   font-size: 50pt;
   font-family: 'Work Sans', sans-serif;
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
 }
 
 img#logo {
-  height: 9vh;
+  height: 70px;
   margin-right: 3vw;
 }
 
@@ -118,6 +140,10 @@ div.pet-container {
   padding-bottom: 5px;
 }
 
+div#pet-text-wrapper h3{
+  margin: 3px;
+}
+
 button, input.button {
   margin-top: 20px;
   padding: 3px;
@@ -130,6 +156,10 @@ button, input.button {
 
 button:hover, input.button:hover {
   border: 2px solid #F57D3D;
+}
+
+button.add {
+  margin: 0 auto 5vh;
 }
 
 button.delete {
@@ -159,4 +189,32 @@ section#appointment-section, section#pet-section {
 form {
   padding: 10px;
   line-height: 4vh;
+}
+
+
+
+/* calendar styling */
+article#calendar {
+  width: 75%;
+  height: 25%;
+  border-top: 20px;
+}
+
+article#calendar button {
+  background-color: #28afb0;
+  font-size: 9pt;
+  font-weight: bold;
+  border: none;
+}
+
+article#calendar button:hover {
+  background-color: #F57D3D;
+}
+
+article#calendar a {
+  font-size: 10pt;
+}
+
+article#calendar h2, article#calendar a {
+  color: #19647E;
 }

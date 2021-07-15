@@ -3,7 +3,6 @@ import React from 'react';
 import AppointmentSchedule from './AppointmentSchedule';
 import {useParams} from "react-router-dom";
 import { useHistory } from "react-router";
-import Calendar from './Calendar'
 
 const AppointmentScheduleContainer = (props) => {
 
@@ -34,7 +33,9 @@ const AppointmentScheduleContainer = (props) => {
         <h2>{pet.name}'s appointments</h2>
         <AppointmentSchedule petId={petId} pet={pet} user={props.user} deleteAppointment={props.deleteAppointment}/>
         <button className="back" onClick={goBackToPets}>back to pets</button>
-        <Calendar user={props.user}/>
+        <footer>
+          <p>© Copyright 2021 Megan Day &amp; Jason Velarde</p>
+        </footer>
     </article>
 };
 

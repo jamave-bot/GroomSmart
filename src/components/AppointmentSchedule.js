@@ -1,6 +1,7 @@
 import React from 'react';
 import Appointment from '../components/Appointment';
 import { useHistory } from 'react-router';
+import Calendar from './Calendar';
 
 const AppointmentSchedule = (props) => {
 
@@ -27,6 +28,7 @@ const AppointmentSchedule = (props) => {
         <Appointment /> */}
         {showAppointments()}
         <button className="add" onClick={goToNewAppointment}>schedule appointment</button>
+        <Calendar user={props.user}/>
     </section>
 };
 

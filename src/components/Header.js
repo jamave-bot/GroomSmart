@@ -3,8 +3,8 @@ import Logo from '../images/groomsmart-logo.png'
 
 const Header = () => (
     <header>
-        <h1>GroomSmart </h1>
-        <img src={Logo} id="logo" alt="Logo for GroomSmart"></img>
+        <a href="/household"><h1>GroomSmart </h1></a>
+        <a href="/household"><img src={Logo} id="logo" alt="Logo for GroomSmart"></img></a>
     </header>
 
 )

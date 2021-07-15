@@ -2,8 +2,6 @@
 import React, {useState} from 'react';
 import { useHistory } from "react-router";
 import {useParams} from "react-router-dom";
-import Calendar from './Calendar'
-
 
 const AppointmentForm = (props) => {
 
@@ -103,7 +101,6 @@ const AppointmentForm = (props) => {
                 <input type="submit" value="book appointment" className="button" />
             </form>
         </section>
-        <Calendar user={props.user}/>
     </article>
 };
 

@@ -2,6 +2,7 @@
 import React from 'react';
 import Pet from '../components/Pet';
 import { useHistory } from "react-router";
+import Calendar from './Calendar';
 
 const Household = (props) => {
 
@@ -22,6 +23,7 @@ const Household = (props) => {
         <Pet /> */}
         {showPets()}
         <button className="add" onClick={handleClick}>add new pet</button>
+        <Calendar user={props.user}/>
     </section>)
 };
 
