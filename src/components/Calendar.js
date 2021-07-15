@@ -7,7 +7,11 @@ export default function Calendar(props) {
     const eventsArr = props.user.appointments.map(appointment=> {
         console.log(appointment.pet_id)
         let thisPet = props.user.pets.find(pet => pet.id === appointment.pet_id)
-        return {title: `${thisPet.name}: ${appointment.service}`, date: appointment.date}
+        if(thisPet){
+            return {title: `${thisPet.name}: ${appointment.service}`, date: appointment.date}
+        } else{
+            return {}
+        }
     })
 
 
