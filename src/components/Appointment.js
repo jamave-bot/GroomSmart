@@ -21,7 +21,7 @@ const Appointment = (props) => {
   // console.log("service: ", props.appointment.service)
 
   const handleClick=()=>{
-    fetch(`http://127.0.0.1:3000/appointments/${props.appointment.id}`, {
+    fetch(`https://groomsmart.herokuapp.com/appointments/${props.appointment.id}`, {
             method: "DELETE",
             headers: {
               "authorization": localStorage.token

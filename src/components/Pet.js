@@ -27,7 +27,7 @@ const Pet = (props) => {
   } 
 
   const handleClick=()=>{
-    fetch(`http://127.0.0.1:3000/pets/${props.pet.id}`, {
+    fetch(`https://groomsmart.herokuapp.com/pets/${props.pet.id}`, {
             method: "DELETE",
             headers: {
               "authorization": localStorage.token

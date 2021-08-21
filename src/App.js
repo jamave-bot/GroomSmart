@@ -56,7 +56,7 @@ class App extends React.Component {
   componentDidMount(){
     if(localStorage.token){
 
-      fetch("http://127.0.0.1:3000/me", {
+      fetch("https://groomsmart.herokuapp.com/me", {
         headers: {
           "authorization": localStorage.token
         }
@@ -95,7 +95,7 @@ class App extends React.Component {
   handleRegisterSubmit = (userInfo) => {
     console.log("Register form has been submitted")
 
-    fetch("http://127.0.0.1:3000/users", {
+    fetch("https://groomsmart.herokuapp.com/users", {
       method: "POST",
       headers: {
         "Content-type": "application/json"
@@ -113,7 +113,7 @@ class App extends React.Component {
   handleLoginSubmit = (userInfo) => {
     console.log("Login form has been submitted")
 
-    fetch("http://127.0.0.1:3000/login", {
+    fetch("https://groomsmart.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-type": "application/json"

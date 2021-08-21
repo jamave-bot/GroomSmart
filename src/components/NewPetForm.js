@@ -26,7 +26,7 @@ const NewPetForm = (props) => {
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        fetch("http://127.0.0.1:3000/pets", {
+        fetch("https://groomsmart.herokuapp.com/pets", {
             method: "POST",
             headers: {
               "Content-type": "application/json",

@@ -31,7 +31,7 @@ const AppointmentForm = (props) => {
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        fetch("http://127.0.0.1:3000/appointments", {
+        fetch("https://groomsmart.herokuapp.com/appointments", {
             method: "POST",
             headers: {
               "Content-type": "application/json",
