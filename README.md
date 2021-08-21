@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+# Live Site: https://groomsmart.netlify.app/
+ - test username: test_user
+ - test password: 123
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
